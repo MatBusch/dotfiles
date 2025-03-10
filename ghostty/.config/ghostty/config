@@ -1,0 +1,17 @@
+# themes can be listed via cli `ghostty +list-themes`
+theme = catppuccin-mocha
+
+# point value format
+# font-size = 14
+
+# 0-1 opacity scale
+background-opacity = 0.8
+
+# the higher this number goes the more the rendering result can be cooked
+background-blur-radius = 15
+
+# general padding control
+window-padding-balance = true
+window-padding-x = 30
+window-padding-y = 30
+
