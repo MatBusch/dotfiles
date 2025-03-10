@@ -1,0 +1,202 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "palette": {
+		"blue": "#8AADF4",
+    "lavender": "#B7BDF8",
+    "magenta": "magenta",
+    "mauve": "#cba6f7",
+    "os": "#ACB0BE",
+    "pink": "#F5BDE6",
+    "red": "#F38BA8",
+    "text": "#494D64",
+    "timeBackground": "#003543",
+    "darkBackground": "#282a36",
+    "transparent": "transparent",
+    "white": "#FFFFFF",
+    "yellow": "#f9e2af",
+    "peach": "#fab387",
+    "green": "#a6e3a1"
+		
+	},
+	"transient_prompt": {
+      "template": "  ❯❯ {{ .AbsolutePWD }} : ",
+      "foreground": "p:mauve",
+      "background": "p:transparent",
+      "newline": true
+    },
+    "blocks": [
+      {
+        "type": "prompt",
+        "alignment": "left",
+        "segments": [
+          {
+            "properties": {
+              "cache_duration": "none"
+            },
+            "template": "\n\u256d\u2500",
+            "foreground": "p:white",
+            "type": "text",
+            "style": "plain"
+          },
+          {
+            "properties": {
+              "cache_duration": "none"
+            },
+            "leading_diamond": "\ue0b6",
+            "template": "{{ .UserName }}",
+            "foreground": "p:text",
+            "background": "p:lavender",
+            "type": "session",
+            "style": "diamond"
+          },
+          {
+            "properties": {
+              "cache_duration": "none"
+            },
+            "template": "\udb85\udc0b",
+            "foreground": "p:red",
+            "powerline_symbol": "\ue0b0",
+            "background": "p:darkBackground",
+            "type": "root",
+            "style": "powerline"
+          },
+          {
+            "properties": {
+              "cache_duration": "none"
+            },
+            "template": "{{ .Icon }}  ",
+            "foreground": "p:text",
+            "powerline_symbol": "\ue0b0",
+            "background": "p:lavender",
+            "type": "os",
+            "style": "powerline"
+          },
+          {
+            "properties": {
+              "cache_duration": "none",
+              "style": "full"
+            },
+            "trailing_diamond": "\ue0b4",
+            "template": " \udb80\ude56 {{ path .Path .Location }}",
+            "foreground": "p:text",
+            "background": "p:pink",
+            "type": "path",
+            "style": "diamond"
+          }
+        ]
+      },
+      {
+        "type": "prompt",
+        "alignment": "right",
+        "segments": [
+          {
+            "properties": {
+              "branch_icon": "",
+              "cache_duration": "none",
+              "display_changing_color": true,
+              "fetch_status": true,
+              "fetch_upstream_icon": true,
+              "full_branch_path": true
+            },
+            "leading_diamond": "\ue0b6",
+            "trailing_diamond": "\ue0b4",
+            "template": "\ue725 ({{ url .UpstreamIcon .UpstreamURL }} {{ url .HEAD .UpstreamURL }}){{ if gt .Ahead 0 }}<#50fa7b> +{{ .Ahead }}</>{{ end }}{{ if gt .Behind 0 }}<#ff5555> -{{ .Behind }}</>{{ end }}{{ if .Working.Changed }}<#f8f8f2> \uf044 {{ .Working.String }}</>{{ end }}{{ if .Staging.Changed }}<#f8f8f2> \uf046 {{ .Staging.String }}</>{{ end }}",
+            "foreground": "p:darkBackground",
+            "background": "p:yellow",
+            "type": "git",
+            "style": "diamond"
+          },
+          {
+            "leading_diamond": "\ue0b6",
+            "trailing_diamond": "\ue0b4",
+            "template": "\ue718 {{ .Full }}",
+            "foreground": "p:darkBackground",
+            "background": "p:green",
+            "type": "node",
+            "style": "diamond"
+          },
+          {
+            "properties": {
+              "display_mode": "files",
+              "extensions": [
+                "package-lock.json"
+              ]
+            },
+            "leading_diamond": "\ue0b6",
+            "trailing_diamond": "\ue0b4",
+            "template": "\ue71e {{ .Full }}",
+            "foreground": "p:darkBackground",
+            "background": "p:red",
+            "type": "npm",
+            "style": "diamond"
+          },
+          {
+            "properties": {
+              "display_mode": "files",
+              "extensions": [
+                "pnpm-lock.yaml"
+              ]
+            },
+            "leading_diamond": "\ue0b6",
+            "trailing_diamond": "\ue0b4",
+            "template": "\udb80\udec1 {{ .Full }}",
+            "foreground": "p:darkBackground",
+            "background": "p:peach",
+            "type": "pnpm",
+            "style": "diamond"
+          },
+          {
+            "properties": {
+              "display_mode": "files"
+            },
+            "leading_diamond": "\ue0b6",
+            "trailing_diamond": "\ue0b4",
+            "template": "\ue73c {{ .Full }}",
+            "foreground": "p:darkBackground",
+            "background": "p:green",
+            "type": "python",
+            "style": "diamond"
+          },
+          {
+            "leading_diamond": "\ue0b6",
+            "trailing_diamond": "\ue0b4",
+            "template": "\ue738 {{ .Full }}",
+            "foreground": "p:darkBackground",
+            "background": "p:pink",
+            "type": "java",
+            "style": "diamond"
+          },
+          {
+            "leading_diamond": "\ue0b6",
+            "trailing_diamond": "\ue0b4",
+            "template": "\ue73d {{ .Full }}",
+            "foreground": "p:white",
+            "background": "p:blue",
+            "type": "php",
+            "style": "diamond"
+          }
+        ]
+      },
+      {
+        "type": "prompt",
+        "alignment": "left",
+        "segments": [
+          {
+            "properties": {
+              "always_enabled": true,
+              "cache_duration": "none"
+            },
+            "template": "\u2570\u2500 ❯❯",
+            "foreground": "p:white",
+            "type": "text",
+            "style": "diamond"
+          }
+        ],
+        "newline": true
+      }
+    ],
+    "version": 3,
+    "patch_pwsh_bleed": true,
+    "enable_cursor_positioning": true,
+    "final_space": true
+  }
