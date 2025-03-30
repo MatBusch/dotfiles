@@ -11,7 +11,7 @@ cat ~/.cache/wal/sequences
 # Fastfetch
 # -----------------------------------------------------
 if [[ $(tty) == *"pts"* ]]; then
-    fastfetch --config $HOME/.config/fastfetch/config.jsonc
+    pokeget random --hide-name | fastfetch --file-raw - --config $HOME/.config/fastfetch/config.jsonc
 else
     echo
     if [ -f /bin/qtile ]; then
